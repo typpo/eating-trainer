@@ -25,13 +25,25 @@ function stateChange(evt) {
 function actionForTime(time) {
   chew();
   maybeSwallow();
+
+  var nextAction = window.INSTRUCTIONS[0];
+  if (nextAction.time < time) {
+    switch (nextAction.action) {
+      case 'dip':
+        dip();
+        break;
+      case 'pass':
+        pass();
+        break;
+    }
+    window.INSTRUCTIONS.shift();
+  }
 }
 
 function chew() {
   $('#chew').effect('highlight', {
     color: 'red',
   }, 500);
-  say('chew');
 }
 
 var swallowCount = 0;
@@ -42,12 +54,24 @@ function maybeSwallow() {
       color: 'blue',
     }, 500);
     swallowCount = 0;
-    say('swallow');
   }
 }
 
+function dip(time) {
+  $('#dip').effect('highlight', {
+    color: 'green',
+  }, 500);
+  say('dip');
+}
+
+function pass(time) {
+  $('#pass').effect('highlight', {
+    color: 'orange',
+  }, 500);
+  say('pass the bun');
+}
+
 function say(s) {
-  return;
   var utterance = new SpeechSynthesisUtterance(s);
   window.speechSynthesis.speak(utterance);
 }
