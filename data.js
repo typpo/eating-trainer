@@ -1,5 +1,29 @@
 window.INSTRUCTIONS = [
   {
+    time: 0,
+    say: 'Are you ready?',
+  },
+  {
+    time: 5,
+    say: 'Remember to chew continuously',
+  },
+  {
+    time: 10,
+    say: 'Begin salivating',
+  },
+  {
+    time: 16,
+    say: 'Start eating',
+  },
+  {
+    time: 20,
+    say: '6 seconds until first hot dog dip',
+  },
+  {
+    time: 23,
+    say: 'eat faster',
+  },
+  {
     time: 26,
     action: 'dip',
   },
@@ -14,6 +38,10 @@ window.INSTRUCTIONS = [
   {
     time: 30,
     action: 'pass',
+  },
+  {
+    time: 32,
+    say: 'eat faster',
   },
   {
     time: 35,
@@ -32,6 +60,10 @@ window.INSTRUCTIONS = [
     action: 'pass',
   },
   {
+    time: 45,
+    say: 'eat faster',
+  },
+  {
     time: 47,
     action: 'dip',
   },
@@ -46,6 +78,18 @@ window.INSTRUCTIONS = [
   {
     time: 55,
     action: 'pass',
+  },
+  {
+    time: 60,
+    say: 'eat faster',
+  },
+  {
+    time: 65,
+    say: 'not fast enough',
+  },
+  {
+    time: 69,
+    say: 'eat faster',
   },
   {
     time: 80,

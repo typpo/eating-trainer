@@ -28,13 +28,17 @@ function actionForTime(time) {
 
   var nextAction = window.INSTRUCTIONS[0];
   if (nextAction.time < time) {
-    switch (nextAction.action) {
-      case 'dip':
-        dip();
-        break;
-      case 'pass':
-        pass();
-        break;
+    if (nextAction.say) {
+      say(nextAction.say);
+    } else {
+      switch (nextAction.action) {
+        case 'dip':
+          dip();
+          break;
+        case 'pass':
+          pass();
+          break;
+      }
     }
     window.INSTRUCTIONS.shift();
   }
