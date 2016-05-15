@@ -23,6 +23,31 @@ function stateChange(evt) {
 }
 
 function actionForTime(time) {
-  console.log(time);
+  chew();
+  maybeSwallow();
 }
 
+function chew() {
+  $('#chew').effect('highlight', {
+    color: 'red',
+  }, 500);
+  say('chew');
+}
+
+var swallowCount = 0;
+function maybeSwallow() {
+  swallowCount++;
+  if (swallowCount == 5) {
+    $('#swallow').effect('highlight', {
+      color: 'blue',
+    }, 500);
+    swallowCount = 0;
+    say('swallow');
+  }
+}
+
+function say(s) {
+  return;
+  var utterance = new SpeechSynthesisUtterance(s);
+  window.speechSynthesis.speak(utterance);
+}

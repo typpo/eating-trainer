@@ -3,14 +3,33 @@
   <head>
     <title>Eating Trainer</title>
     <meta charset="utf-8">
+    <style>
+      .action {
+        color: #ccc;
+        font-size: 20px;
+      }
+
+      .action-list li {
+        display: inline;
+      }
+    </style>
   </head>
   <body>
     <h1>Learn how to eat like a champion</h1>
+    <ul class="action-list">
+      <li id="chew" class="action">chew</li>
+      <li id="swallow" class="action">swallow</li>
+      <li id="drink" class="action">drink</li>
+      <li id="dip" class="action">dip</li>
+      <li id="wiggle" class="action">wiggle</li>
+    </ul>
+
     <div id="instruction"></div>
     <div id="video"></div>
 
-    <script src="https://www.youtube.com/player_api"></script>
     <script src="jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
     <script src="main.js"></script>
+    <script src="https://www.youtube.com/player_api"></script>
   </body>
 </html>
